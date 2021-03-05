@@ -3,8 +3,8 @@
     <div class="searchContainer">
         <mat-toolbar class="inputGroup">
             <span><i class="fas fa-search"></i></span>
-            <input type="text" placeholder="search">
-            <span><i class="fas fa-times"></i></span> 
+            <input type="text" [(ngModel)]="Search" (keydown.enter)="getCharacter()" placeholder="search">
+            <span><i class="fas fa-times" (click)="clean()"></i></span> 
         </mat-toolbar>
     </div>
 </div>
@@ -17,9 +17,24 @@
                     <mat-card-title> {{character.name}} </mat-card-title>
                 </mat-card-header>
                     <img mat-card-image [src]="character.image" alt="">
-                <mat-card-content>
+                <mat-card-content class="cardContainer">
+                            <p class="case know">{{character.species}}</p> 
+                <div class="dataContainer" [ngSwitch]="character.status">
+                    <p *ngSwitchCase="'Alive'" class="case nice">{{character.status | titlecase }}</p>
+                    <p *ngSwitchCase="'Dead'"  class="case bad">{{character.status | titlecase }}</p>
+                    <p *ngSwitchDefault  class="case know">{{character.status | titlecase }}</p>
+                </div>
                 </mat-card-content>
                 </div>
             </mat-card>
     </mat-toolbar>
+    <mat-toolbar class="buttons">
+        <div class="buttons">
+            <button (click)="previusPage()" mat-raised-button color="warn"><i class="fas fa-arrow-left"></i></button>
+            <button mat-raised-button color="warn" class="fake"><i class="fas fa-circle"></i></button>
+            <button (click)="nextPage()" mat-raised-button color="warn"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </mat-toolbar>
+    
+    
 </div>
