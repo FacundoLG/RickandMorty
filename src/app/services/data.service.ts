@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private mainUrl = 'https://rickandmortyapi.com/api/character/';
+  private mainUrl = 'https://rickandmortyapi.com/api/character';
   private searchUrl = 'https://rickandmortyapi.com/api/character/?name='
   constructor(private http: HttpClient) { }
 
