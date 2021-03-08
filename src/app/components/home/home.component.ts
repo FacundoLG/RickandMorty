@@ -11,6 +11,9 @@ export class HomeComponent implements OnInit {
   next = '';
   prev = '';
   Search = '';
+  Counter = 1;
+  lastid = 20;
+  resultlength = 20;
   constructor(private getData: DataService) { }
 
   ngOnInit(): void {
@@ -40,6 +43,8 @@ export class HomeComponent implements OnInit {
       this.apiData = data.info;
       this.next = data.info.next;
       this.prev = data.info.prev;
+      this.Counter = data.info.next.substring(48) - 1 
+      console.log(this.Counter)      
     });
   }
   previusPage(): void{
@@ -48,6 +53,8 @@ export class HomeComponent implements OnInit {
       this.apiData = data.info;
       this.next = data.info.next;
       this.prev = data.info.prev;
+      this.Counter = data.info.next.substring(48) - 1 
+      console.log(this.Counter)  
     });
   }
 }
