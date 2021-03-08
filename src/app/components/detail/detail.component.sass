@@ -3,22 +3,25 @@
     background-attachment: fixed
     background-size: cover
     background-position-x: right
-    height: 90vh
+    height: 100%
     display: flex
     justify-content: center
     align-items: center
 .dataContainer
     width: 90%
-    height: 90%
+    max-width: 900px
+    height: auto
     opacity: 0.95
     border-radius: 10px
     margin: 10px
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.4)
     div
         margin: 5px
     .leftSide
         display: flex
         flex-direction: column
         align-items: center
+        margin-right: 20px
         width: 30%
         max-width: 200px
         height: 100%
@@ -26,7 +29,6 @@
             margin-top: 10px
         .ImgContainer
             img
-                width: 100%
                 max-width: 200px
                 border-radius: 5px
     .rightSide
@@ -36,3 +38,14 @@
         flex-direction: column
         h5
             margin-top: 10px
+
+@mixin phone()
+    @media screen and ( max-width: 600px  )
+        .dataContainer
+            display: flex
+            flex-direction: row
+@mixin desk()
+    @media screen and ( max-width: 601px  )
+        .dataContainer
+            display: flex
+            flex-direction: column
