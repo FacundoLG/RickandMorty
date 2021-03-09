@@ -16,6 +16,7 @@ export class DetailComponent implements OnInit {
   chImage = ''
   chSpecie = ''
   chEpisode = ''
+  datasave: object = []
   constructor(
     private route: ActivatedRoute,
     private data: DataService) { }
@@ -25,6 +26,7 @@ export class DetailComponent implements OnInit {
        this.id = params.id
     })
     this.data.getCharacterbyId(this.id).subscribe(data =>{
+      this.datasave = data
       this.chName = data.name
       this.chStatus = data.status
       this.chGender = data.gender

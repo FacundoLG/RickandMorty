@@ -1,5 +1,8 @@
 <div class="img">
     <mat-toolbar class="dataContainer">
+        <div class="back">
+            <a  class="backRow"routerLink=""><i class="fas fa-arrow-circle-left"></i></a>    
+        </div>
         <div class="leftSide">
             <div>
                 {{chName}}
@@ -8,7 +11,7 @@
                 <img [src]="chImage" alt="">
             </div>
         </div>
-        <div class="rightSide">
+        <div *ngIf="datasave" class="rightSide">
             <h5>Gender: {{chGender}}</h5>
             <h5>Status: {{chStatus}}</h5>
             <h5>Specie: {{chSpecie}}</h5>

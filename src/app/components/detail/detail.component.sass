@@ -5,9 +5,12 @@
     background-position-x: right
     height: 100%
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
 .dataContainer
+    display: flex
+    flex-direction: column
     width: 90%
     max-width: 900px
     height: auto
@@ -36,16 +39,19 @@
         height: 100%
         display: flex
         flex-direction: column
+        justify-content: center
         h5
             margin-top: 10px
-
-@mixin phone()
-    @media screen and ( max-width: 600px  )
-        .dataContainer
-            display: flex
-            flex-direction: row
-@mixin desk()
-    @media screen and ( max-width: 601px  )
-        .dataContainer
-            display: flex
-            flex-direction: column
+            font-size: 12px
+            margin: 0px
+    .backRow
+        color: white
+    .backRow:hover
+        color: #bddbdb
+@media ( min-width: 600px  )
+    .dataContainer
+        display: flex
+        flex-direction: row
+    .rightSide
+        h5
+            font-size: 16px !important
