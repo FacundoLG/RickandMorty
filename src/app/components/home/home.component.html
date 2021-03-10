@@ -12,13 +12,6 @@
     <mat-toolbar class="infoData">
         <div>
             <h5>Characters: {{apiData.count}} Total Pages: {{apiData.pages - 1}}</h5>
-            <mat-toolbar class="buttons">
-                <div class="buttons">
-                    <button (click)="previusPage()" mat-raised-button color="warn"><i class="fas fa-arrow-left"></i></button>
-                    <button mat-raised-button color="warn" class="fake"> {{Counter}} </button>
-                    <button (click)="nextPage()" mat-raised-button color="warn"><i class="fas fa-arrow-right"></i></button>
-                </div>
-            </mat-toolbar>
         </div>
     </mat-toolbar>
     <mat-toolbar class="main">

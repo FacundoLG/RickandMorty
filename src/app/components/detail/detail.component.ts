@@ -34,7 +34,7 @@ export class DetailComponent implements OnInit {
       this.chImage = data.image
       this.chLocation = data.location.name
       this.chOrigin = data.origin.name
-      this.chEpisode = data.episode.length + 1
+      this.chEpisode = data.episode.length 
       console.log(data)
     })
   }
