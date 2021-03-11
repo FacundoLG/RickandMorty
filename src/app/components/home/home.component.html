@@ -25,10 +25,16 @@
                     <img mat-card-image class="imageCard" [src]="character.image" alt="">
                 <mat-card-content class="cardContainer">
                     <div class="dataContainer" [ngSwitch]="character.status">
-                        <p class="case know">Specie: {{character.species}}</p> 
-                        <p *ngSwitchCase="'Alive'" class="case nice"> Status: {{character.status | titlecase }}</p>
-                        <p *ngSwitchCase="'Dead'"  class="case bad"> Status: {{character.status | titlecase }}</p>
-                        <p *ngSwitchDefault  class="case know"> Status: {{character.status | titlecase }}</p>
+                        <div>
+                            <p *ngSwitchCase="'Alive'" class="case nice"> Status: {{character.status | titlecase }}</p>
+                            <p *ngSwitchCase="'Dead'"  class="case bad"> Status: {{character.status | titlecase }}</p>
+                            <p *ngSwitchDefault  class="case know"> Status: {{character.status | titlecase }}</p>
+                            <p>Specie: {{character.species}}</p>
+                        </div> 
+                        <div>
+                            <p  class="case know">Origin: </p>
+                            <p> {{character.origin.name}} </p>
+                        </div>
                     </div>
                 </mat-card-content>
                 </div>

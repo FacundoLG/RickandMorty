@@ -17,7 +17,7 @@ import { AboutComponent } from './components/about/about.component';
     NavbarComponent,
     HomeComponent,
     DetailComponent,
-    AboutComponent
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
